@@ -1,0 +1,303 @@
+@import "vars"
+@import "fonts"
+@import "libs"
+
+// Базовые настройки
+.btn
+	width: 170px
+	padding: 16px 0
+	text-align: center
+	font-size: 14px
+	font-weight: bold
+	text-transform: uppercase
+	border-radius: 6px
+	border: none
+	border-bottom: 3px solid #736357
+	background: $accent
+	color: #fff
+	&:focus
+		outline: none
+.slick-active
+	outline: none
+.slick-slide
+	outline: none
+::placeholder
+	color: #666
+::selection
+	background-color: $accent
+	color: #fff
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.65
+	font-family: $default-font
+	overflow-x: hidden
+	color: $text
+	input, textarea
+		border: #666 1px solid
+		outline: none
+		&:focus:required:invalid
+			border-color: red
+		&:required:valid
+			border-color: green
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+	&.img-width
+		width: 100%
+.text-center
+	text-align: center
+b, strong
+	font-weight: bold
+	// Хедер
+.header
+	overflow: hidden
+	background: url(../img/bg-header.jpg) center center no-repeat
+	background-size: cover
+	background-attachment: local
+	padding: 0px 0 40px
+	a
+		text-decoration: none
+	// Навигация
+	ul
+		padding: 0
+		margin: 0
+		line-height: 56px
+		li
+			display: inline-block
+	&-line
+		padding-top: 40px
+	&-nav
+		li
+			margin-right: 30px
+			a
+				font-size: 14px
+				color: #fff
+				&.active
+					color: $accent
+	// Моб. навигация
+	.toggle-menu
+		display: none
+		position: relative
+		.toggle-btn
+			position: relative
+			transition: all 0.5s ease
+			top: -48px
+			padding: 20px 60px
+			background: $accent
+			border-bottom-left-radius: 25%			
+			border-bottom-right-radius: 25%
+			border-bottom: 3px solid #736357
+			z-index: 444
+			span
+				transition: all 0.5s ease
+				position: relative
+				margin-top: 30px
+				display: inline-block
+				height: 5px 
+				background: #fff
+				width: 30px
+				border-radius: 3px
+				&::before
+					transition: all 0.5s ease
+					position: absolute
+					left: 0
+					top: 12px
+					content: ''
+					display: inline-block
+					height: 5px 
+					background: #fff
+					width: 30px
+					border-radius: 3px
+				&::after
+					transition: all 0.5s ease
+					top: 24px
+					left: 0
+					position: absolute
+					content: ''
+					display: inline-block
+					height: 5px 
+					background: #fff
+					width: 30px
+					border-radius: 3px
+		.toggle-items
+			transition: all 0.5s ease
+			margin-top: -200%
+			li
+				transition: all 0.5s ease
+				display: block
+				background: $accent
+				opacity: 0.75
+				border-radius: 10px
+				margin: 5px 9%
+				&:hover
+					background: darken($accent, 10%)
+				a
+					font-weight: bold
+					color: #fff
+					text-transform: uppercase
+					display: block
+		#checkbox-toggle:checked
+			& ~ .toggle-items 
+				margin-top: 0
+			& ~ .toggle-btn
+				top: -56px
+				span
+					&::before
+						top: 24px
+						transform-origin: center
+						transform: rotate(-45deg)
+					&::after
+						transform-origin: center
+						transform: rotate(45deg)
+	#checkbox-toggle
+		display: none
+	.search
+		float: right
+		line-height: 
+	.cart
+		float: left
+		// Хедер-Слайдер
+	.header-slider
+		margin-top: 8%
+		color: #fff
+		h1
+			font-size: em(51px)	
+			span
+				display: block
+				font-size: em(36px)
+				font-weight: normal
+		p
+			font-size: em(16px)
+			margin-bottom: 65px
+			max-width: 540px
+			display: inline-block
+		button
+			transition: all .5s ease
+			margin-bottom: 8%
+			&:hover
+				transform: translateY(-10px)
+		.btn
+			&:hover
+				box-shadow: 0px 3px #736357
+				background: darken($accent, 10%)
+.prevArrow
+	position: absolute
+	z-index: 5
+	left: 4%
+	top: 54%
+	margin-top: -72px
+	background-color: transparent !important
+	border: none
+	&:focus
+		outline: none
+.nextArrow
+	position: absolute
+	z-index: 5
+	right: 4%
+	top: 54%
+	margin-top: -72px
+	background-color: transparent !important
+	border: none
+	&:focus
+		outline: none
+.slick-dots
+	button
+		&::before
+			border-radius: 50%
+			z-index: 10
+			background: #908e8f
+	// Достоинства
+.features
+	padding: 85px 0 160px
+	.svg
+		display: inline-block
+		svg 
+		  width: 50px
+		  height: 50px
+		  fill: #555555
+		  transition: all 0.5s ease
+	&-items
+		h3
+			transition: all .5s ease
+		p
+		span
+			display: inline-block
+			width: 70px
+			height: 3px
+			background: #c7b299
+			transition: all .5s ease
+			transform: scaleX(0)
+
+		&:hover
+		  	svg
+		  		fill: #c7b299
+		  	h3
+		  		color: #c7b299
+		  	p
+		  	span
+		  		transform: scaleX(1)
+.ideas
+	img
+		max-width: 100vh
+		background: #dedede
+	p 
+		padding-bottom: 45px
+		font-size: 16px
+	h3
+		font-size: 30px
+	span
+		color: $accent
+	&-img-wrap
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		div
+			background: #dedede
+			max-width: 100vh
+			width: 33%
+			transition: all 0.75s ease
+			overflow: hidden
+			&:hover
+				width: 100%
+				transition: all 1.25s ease
+				margin-top: 0
+		.ideas-img1
+			&:hover
+				& ~ .ideas-img2
+					transition: all 1.25s ease
+					width: 33%
+		.ideas-img2
+			transition: all 1.25s ease
+			width: 100%
+			&:hover
+		.ideas-img3
+			&:hover
+				margin-left: -25%
+				& ~ .ideas-img2
+					transition: all 1.25s ease
+					width: 33%
+
+	.wordpress-theme
+		position: relative
+		right: 0
+		left: 0
+		z-index: 100
+		margin: -90px 0
+		background-image: url(../img/Background.jpg)
+		button
+			margin-top: 50px
+
+
+		
+	
+
+
+
+
+
+@import "media" // Always at the end
